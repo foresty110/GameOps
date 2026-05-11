@@ -56,7 +56,7 @@ services:
       DB_PASSWORD: ${MYSQL_PASSWORD:-gameops}
       REDIS_HOST: redis
       REDIS_PORT: 6379
-      JWT_SECRET: ${JWT_SECRET:-dev-secret-change-me-this-must-be-at-least-32-bytes-long}
+      JWT_SECRET: ${JWT_SECRET:?JWT_SECRET must be set in .env (>= 32 bytes). See .env.example.}
       JWT_ACCESS_EXPIRATION_MINUTES: ${JWT_ACCESS_EXPIRATION_MINUTES:-30}
       JWT_REFRESH_EXPIRATION_DAYS: ${JWT_REFRESH_EXPIRATION_DAYS:-7}
       TZ: Asia/Seoul

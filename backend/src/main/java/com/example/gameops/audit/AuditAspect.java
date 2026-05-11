@@ -1,6 +1,7 @@
 package com.example.gameops.audit;
 
 import com.example.gameops.audit.domain.AuditLog;
+import com.example.gameops.auth.AdminPrincipal;
 import jakarta.servlet.http.HttpServletRequest;
 import java.lang.reflect.Method;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -50,20 +51,13 @@ public class AuditAspect {
       return SYSTEM_ADMIN_ID;
     }
     Object principal = auth.getPrincipal();
+    if (principal instanceof AdminPrincipal ap) {
+      return ap.id();
+    }
     if (principal instanceof Long id) {
       return id;
     }
-    if (principal instanceof Number n) {
-      return n.longValue();
-    }
-    if ("anonymousUser".equals(principal)) {
-      return SYSTEM_ADMIN_ID;
-    }
-    try {
-      return Long.parseLong(principal.toString());
-    } catch (NumberFormatException ignored) {
-      return SYSTEM_ADMIN_ID;
-    }
+    return SYSTEM_ADMIN_ID;
   }
 
   private String currentIp() {

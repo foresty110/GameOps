@@ -7,8 +7,14 @@
 ## 빠른 실행
 
 ```bash
-docker-compose up
+cp .env.example .env   # 첫 실행 시 한 번
+docker-compose up --build
 ```
+
+기동 후 접속:
+- 어드민 UI: http://localhost
+- API: http://localhost:8080
+- Health: http://localhost:8080/actuator/health
 
 `local` 프로파일에서 운영자 4명이 자동 시드됩니다. 모두 비밀번호는 `Admin1234!` 입니다.
 

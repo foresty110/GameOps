@@ -3,16 +3,16 @@
 > Day별 우선순위 확인 시 읽는다. 체크박스는 진행하며 갱신.
 
 ## Day 1: 기반 구축
-- [ ] Spring Boot 프로젝트 셋업 + Gradle
-- [ ] docker-compose (mysql + redis + backend + frontend)
-- [ ] Spring Security + JWT
-- [ ] RBAC 4개 역할(@docs/audit-and-security.md)
-- [ ] 운영자 계정 CRUD + 로그인 API
-- [ ] React + Vite + Tailwind + TanStack Query 셋업
-- [ ] 공통 레이아웃 + 로그인 페이지
-- [ ] Audit Log 인프라(엔티티 + AOP)
-- [ ] 글로벌 ExceptionHandler + ApiResponse
-- [ ] 시드 데이터 스크립트
+- [x] Spring Boot 프로젝트 셋업 + Gradle (SB 3.3.5, Java 17)
+- [x] docker-compose (mysql + redis + backend + frontend)
+- [x] Spring Security + JWT (jjwt 0.12.x)
+- [x] RBAC 4개 역할(@docs/audit-and-security.md)
+- [x] 운영자 계정 + 로그인 API (CRUD는 Day 2~로 이월)
+- [x] React + Vite + Tailwind + TanStack Query 셋업
+- [x] 공통 레이아웃 + 로그인 페이지
+- [x] Audit Log 인프라(엔티티 + AOP)
+- [x] 글로벌 ExceptionHandler + ApiResponse
+- [x] 시드 데이터 스크립트 (LocalSeeder, @Profile("local"))
 
 ## Day 2: 유저 관리
 - [ ] GameUser 엔티티 + 검색 API (페이지네이션, 다중 조건)

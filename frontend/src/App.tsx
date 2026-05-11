@@ -1,13 +1,25 @@
+import { Navigate, Route, Routes } from 'react-router-dom'
+import LoginPage from './pages/LoginPage'
+import DashboardPage from './pages/DashboardPage'
+import ProtectedRoute from './shared/components/ProtectedRoute'
+import Layout from './shared/layouts/Layout'
+
 function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-50 text-slate-800">
-      <div className="text-center">
-        <h1 className="text-3xl font-semibold">GameOps</h1>
-        <p className="mt-2 text-sm text-slate-500">
-          Day 1 scaffold — login & layout arrive in step 1-9.
-        </p>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route
+        element={
+          <ProtectedRoute>
+            <Layout />
+          </ProtectedRoute>
+        }
+      >
+        <Route index element={<Navigate to="/dashboard" replace />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
+      </Route>
+      <Route path="*" element={<Navigate to="/dashboard" replace />} />
+    </Routes>
   )
 }
 

@@ -1,1 +1,50 @@
-# Filled in by day1/foundation 1-1.
+# Env
+.env
+.env.local
+.env.*.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# Gradle / Java
+.gradle/
+**/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+!gradle/wrapper/gradle-wrapper.jar
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# Node / Vite
+node_modules/
+dist/
+dist-ssr/
+*.local
+.vite/
+pnpm-debug.log*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Logs
+logs/
+*.log
